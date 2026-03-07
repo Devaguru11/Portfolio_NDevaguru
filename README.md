@@ -40,7 +40,7 @@ This portfolio showcases projects, experience, skills, certifications, and achie
 - All loaded via Google Fonts
 
 **Form Handling**
-- Formspree — contact form submissions delivered to email inbox, no backend required
+- Formspree (formspree.io) — third party form backend service used to handle contact form submissions without a server. When a visitor fills out the contact form and clicks Send Message, the form data is sent via a POST request to the Formspree endpoint (formspree.io/f/xreygvbz). Formspree processes the submission and forwards it as an email directly to nvdevagurus@gmail.com. The free tier supports up to 50 submissions per month. No backend code, no server, no database required.
 
 **Animations and Interactions**
 - CSS keyframe animations — hero entrance, orb floats, scroll indicator
@@ -57,7 +57,7 @@ This portfolio showcases projects, experience, skills, certifications, and achie
 - Mobile hamburger menu with animated open/close state
 
 **Hosting**
-- Netlify — deployed via manual drag and drop, no CLI required
+- Netlify (netlify.app) — cloud platform used to host and serve the portfolio. The site is deployed by dragging and dropping the index.html file directly onto the Netlify dashboard under the manual deploy option. Netlify assigns a unique subdomain instantly (devagurunanduri.netlify.app). The free tier includes unlimited personal projects, automatic HTTPS, global CDN distribution, and custom subdomain naming. No build configuration, no CLI, and no server management is needed. Every time the HTML file is updated, a new deploy can be triggered by uploading the file again through the dashboard.
 
 **Resume**
 - Hosted on GitHub raw file URL with HTML download attribute for direct PDF download
