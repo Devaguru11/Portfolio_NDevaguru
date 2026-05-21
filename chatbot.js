@@ -148,7 +148,7 @@
       ]
     },
     academics: {
-      reply: "I am pursuing a B.Tech in CSE at Woxsen University (Class of 2027) with an 8.98 CGPA. I serve as Class Representative, and work as a Research Assistant at Woxsen Agentic Lab researching LLM-driven autonomous AI agents.",
+      reply: "I am pursuing a B.Tech in CSE at Woxsen University (Class of 2027) with an 9.08 CGPA. I serve as Class Representative, and work as a Research Assistant at Woxsen Agentic Lab researching LLM-driven autonomous AI agents.",
       questions: [
         { text: "What was my role at nBall.ai?", nextState: "exp_nball" },
         { text: "Tell me about my Amazon Mentorship", nextState: "exp_amazon" },
