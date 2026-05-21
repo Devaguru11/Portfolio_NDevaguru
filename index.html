@@ -22,7 +22,6 @@
     --font-body: 'DM Sans', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
   }
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
@@ -42,22 +41,16 @@
     pointer-events: none;
     z-index: 9999;
   }
-
-  /* CURSOR desktop only */
   .cursor,.cursor-ring{display:none}
   @media(pointer:fine){
     .cursor{display:block;width:10px;height:10px;background:var(--accent);border-radius:50%;position:fixed;pointer-events:none;z-index:10000;transition:transform .1s;mix-blend-mode:difference}
     .cursor-ring{display:block;width:40px;height:40px;border:1px solid var(--accent);border-radius:50%;position:fixed;pointer-events:none;z-index:10000;transition:all .15s ease;opacity:.5}
   }
-
-  /* NAV */
   nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 4rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);background:rgba(6,8,15,.85);border-bottom:1px solid var(--border)}
   .nav-logo{font-family:var(--font-display);font-size:1.6rem;letter-spacing:3px;color:var(--accent);text-decoration:none}
   .nav-links{display:flex;gap:2.5rem;list-style:none}
   .nav-links a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
   .nav-links a:hover{color:var(--accent)}
-
-  /* HAMBURGER */
   .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
   .hamburger span{display:block;width:24px;height:1.5px;background:var(--accent);transition:all .3s}
   .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,5px)}
@@ -67,8 +60,6 @@
   .mobile-menu.open{display:flex}
   .mobile-menu a{font-family:var(--font-mono);font-size:.9rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);text-decoration:none}
   .mobile-menu a:hover{color:var(--accent)}
-
-  /* HERO */
   .hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 4rem 6rem;position:relative;overflow:hidden}
   .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(79,255,176,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(79,255,176,.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,black 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,black 40%,transparent 100%)}
   .hero-orb{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(123,97,255,.15) 0%,transparent 70%);top:-200px;right:-100px;animation:orb-float 8s ease-in-out infinite;pointer-events:none}
@@ -83,20 +74,15 @@
   .scroll-line{width:1px;height:50px;background:linear-gradient(to bottom,var(--accent),transparent);animation:scroll-anim 2s ease-in-out infinite}
   @keyframes scroll-anim{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
   @keyframes fade-up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-
   .btn{padding:.8rem 2rem;font-family:var(--font-mono);font-size:.75rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:all .25s;cursor:pointer;border:none;display:inline-block}
   .btn-primary{background:var(--accent);color:#06080f;font-weight:600}
   .btn-primary:hover{background:#fff;transform:translateY(-2px);box-shadow:0 8px 30px rgba(79,255,176,.3)}
   .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
   .btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
-
-  /* SECTIONS */
   section{padding:7rem 4rem;position:relative}
   .section-label{font-family:var(--font-mono);font-size:.68rem;letter-spacing:5px;color:var(--accent);text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:1rem}
   .section-label::after{content:'';height:1px;width:60px;background:var(--accent);opacity:.4}
   .section-title{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4.5rem);letter-spacing:2px;line-height:1;margin-bottom:4rem}
-
-  /* ABOUT */
   .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
   .about-text p{color:#8a93b8;font-size:1.05rem;line-height:1.9;margin-bottom:1.5rem;font-weight:300}
   .about-text p strong{color:var(--text);font-weight:500}
@@ -111,8 +97,6 @@
   .focus-num{font-family:var(--font-display);font-size:1.8rem;color:rgba(79,255,176,.25);line-height:1;flex-shrink:0;width:40px;text-align:center;padding-top:2px}
   .focus-content h4{font-size:.95rem;font-weight:500;margin-bottom:.2rem}
   .focus-content p{font-size:.82rem;color:var(--muted)}
-
-  /* SKILLS */
   #skills{background:var(--bg2)}
   .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
   .skill-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2rem;transition:all .3s;position:relative;overflow:hidden}
@@ -122,8 +106,6 @@
   .skill-cat{font-family:var(--font-mono);font-size:.65rem;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:1rem}
   .skill-tags{display:flex;flex-wrap:wrap;gap:.5rem}
   .tag{font-size:.8rem;padding:.3rem .8rem;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:4px;color:#a0aac8;font-family:var(--font-mono)}
-
-  /* PROJECTS */
   .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
   .project-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2.5rem;transition:all .4s;position:relative;overflow:hidden;cursor:pointer}
   .project-card:hover{border-color:rgba(79,255,176,.25);transform:translateY(-6px);box-shadow:0 30px 60px rgba(0,0,0,.5)}
@@ -136,7 +118,6 @@
   .stack-tag{font-family:var(--font-mono);font-size:.68rem;letter-spacing:1px;padding:.25rem .7rem;border-radius:3px;background:rgba(79,255,176,.07);color:var(--accent);border:1px solid rgba(79,255,176,.15)}
   .project-link{position:absolute;bottom:1.5rem;right:1.5rem;width:36px;height:36px;border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.85rem;transition:all .2s}
   .project-card:hover .project-link{border-color:var(--accent);color:var(--accent)}
-  /* EXPERIENCE */
   #experience{background:var(--bg2)}
   .timeline{position:relative;max-width:800px}
   .timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--accent),transparent)}
@@ -147,8 +128,8 @@
   .timeline-role{font-size:1.3rem;font-weight:500;margin-bottom:.3rem}
   .timeline-company{font-family:var(--font-mono);font-size:.8rem;color:var(--muted);margin-bottom:1rem;letter-spacing:1px}
   .timeline-desc{font-size:.9rem;color:#6e7898;line-height:1.8;font-weight:300}
-
-  /* ACHIEVEMENTS */
+  /* Mentorship badge */
+  .mentorship-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem 1rem;background:rgba(123,97,255,.08);border:1px solid rgba(123,97,255,.25);border-radius:4px;font-family:var(--font-mono);font-size:.65rem;letter-spacing:2px;color:var(--accent2);text-transform:uppercase;margin-top:.8rem}
   .achievements-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
   .achievement-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2rem;position:relative;overflow:hidden;transition:all .3s}
   .achievement-card:hover{border-color:rgba(255,107,107,.3);transform:translateY(-4px)}
@@ -157,8 +138,6 @@
   .achievement-title{font-size:1rem;font-weight:500;margin-bottom:.3rem}
   .achievement-where{font-family:var(--font-mono);font-size:.7rem;color:var(--accent3);letter-spacing:1px;margin-bottom:.7rem}
   .achievement-desc{font-size:.82rem;color:var(--muted);font-weight:300}
-
-  /* CERTS */
   #certifications{background:var(--bg2)}
   .certs-list{display:flex;flex-direction:column;gap:1rem;max-width:750px}
   .cert-item{display:flex;align-items:center;gap:1.5rem;padding:1.5rem 2rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;transition:all .3s;text-decoration:none;color:inherit}
@@ -168,8 +147,6 @@
   .cert-issuer{font-family:var(--font-mono);font-size:.68rem;color:var(--accent2);letter-spacing:1px}
   .cert-verify{margin-left:auto;font-family:var(--font-mono);font-size:.62rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase;flex-shrink:0}
   .cert-item:hover .cert-verify{color:var(--accent2)}
-
-  /* EXTRAS */
   .extras-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
   .extra-card{display:flex;align-items:flex-start;gap:1.5rem;padding:1.8rem;background:var(--surface);border:1px solid var(--border);border-radius:12px;transition:all .3s}
   .extra-card:hover{border-color:rgba(79,255,176,.2);transform:translateY(-3px)}
@@ -177,8 +154,6 @@
   .extra-title{font-size:1rem;font-weight:500;margin-bottom:.3rem}
   .extra-sub{font-family:var(--font-mono);font-size:.68rem;color:var(--accent);letter-spacing:1px;margin-bottom:.5rem}
   .extra-desc{font-size:.82rem;color:var(--muted);font-weight:300}
-
-  /* CONTACT */
   #contact{background:var(--bg2)}
   .contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
   .contact-left h2{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,5rem);letter-spacing:2px;line-height:1;margin-bottom:1.5rem}
@@ -196,17 +171,42 @@
   .form-group input,.form-group textarea{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:.9rem 1.2rem;color:var(--text);font-family:var(--font-body);font-size:.9rem;outline:none;transition:border-color .2s;resize:none;width:100%}
   .form-group input:focus,.form-group textarea:focus{border-color:var(--accent)}
   .form-group textarea{min-height:120px}
-
-  /* FOOTER */
   footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;background:var(--bg)}
   footer p{font-family:var(--font-mono);font-size:.68rem;color:var(--muted);letter-spacing:2px}
-
-  /* REVEAL */
   .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
   .reveal.visible{opacity:1;transform:translateY(0)}
   .reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}.reveal-delay-3{transition-delay:.3s}.reveal-delay-4{transition-delay:.4s}
 
-  /* MOBILE */
+  /* ── CHATBOT ── */
+  #chat-fab{position:fixed;bottom:2rem;right:2rem;z-index:1000;width:56px;height:56px;border-radius:50%;background:var(--accent);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(79,255,176,.35);transition:transform .2s,box-shadow .2s}
+  #chat-fab:hover{transform:scale(1.1);box-shadow:0 8px 32px rgba(79,255,176,.5)}
+  #chat-fab svg{width:24px;height:24px;color:#06080f;transition:opacity .2s}
+  #chat-fab .fab-close{display:none}
+  #chat-fab.open .fab-open{display:none}
+  #chat-fab.open .fab-close{display:block}
+  #chat-box{position:fixed;bottom:5.5rem;right:2rem;z-index:999;width:340px;max-height:480px;background:var(--surface);border:1px solid rgba(79,255,176,.2);border-radius:16px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.6);opacity:0;pointer-events:none;transform:translateY(16px) scale(.97);transition:opacity .25s,transform .25s}
+  #chat-box.open{opacity:1;pointer-events:all;transform:translateY(0) scale(1)}
+  .chat-header{padding:1rem 1.2rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.75rem;background:rgba(79,255,176,.04)}
+  .chat-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1rem;color:#06080f;flex-shrink:0}
+  .chat-header-info{}
+  .chat-header-name{font-size:.9rem;font-weight:500}
+  .chat-header-status{font-family:var(--font-mono);font-size:.62rem;color:var(--accent);letter-spacing:1px}
+  .chat-messages{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.75rem;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+  .chat-messages::-webkit-scrollbar{width:4px}
+  .chat-messages::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+  .msg{max-width:85%;padding:.65rem .9rem;border-radius:12px;font-size:.83rem;line-height:1.5}
+  .msg-bot{background:rgba(255,255,255,.06);border:1px solid var(--border);color:var(--text);align-self:flex-start;border-radius:4px 12px 12px 12px}
+  .msg-user{background:rgba(79,255,176,.12);border:1px solid rgba(79,255,176,.2);color:var(--text);align-self:flex-end;border-radius:12px 4px 12px 12px}
+  .chat-suggestions{padding:.5rem 1rem .75rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  .sug-btn{font-family:var(--font-mono);font-size:.62rem;letter-spacing:1px;padding:.3rem .7rem;background:rgba(79,255,176,.06);border:1px solid rgba(79,255,176,.15);border-radius:4px;color:var(--accent);cursor:pointer;transition:all .2s;white-space:nowrap}
+  .sug-btn:hover{background:rgba(79,255,176,.15)}
+  .chat-input-row{padding:.75rem 1rem;border-top:1px solid var(--border);display:flex;gap:.5rem}
+  #chat-input{flex:1;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:6px;padding:.5rem .8rem;color:var(--text);font-family:var(--font-body);font-size:.82rem;outline:none}
+  #chat-input:focus{border-color:var(--accent)}
+  #chat-send{width:34px;height:34px;border-radius:6px;background:var(--accent);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s}
+  #chat-send:hover{background:#fff}
+  #chat-send svg{width:16px;height:16px;color:#06080f}
+
   @media(max-width:960px){
     nav{padding:1rem 1.5rem}
     .nav-links{display:none}
@@ -223,6 +223,8 @@
     footer{flex-direction:column;gap:.5rem;padding:1.5rem;text-align:center}
     .cert-verify{display:none}
     .focus-item:hover,.contact-link:hover,.cert-item:hover{transform:none}
+    #chat-box{width:calc(100vw - 2rem);right:1rem;bottom:5rem}
+    #chat-fab{bottom:1.5rem;right:1rem}
   }
   @media(max-width:500px){
     .skills-grid{grid-template-columns:1fr}
@@ -239,7 +241,6 @@
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">DN</a>
   <ul class="nav-links">
@@ -270,12 +271,14 @@
   <div class="hero-orb2"></div>
   <div class="hero-label">Available for Internships</div>
   <h1 class="hero-title">DEVA<span>GURU</span><br>NANDURI</h1>
-  <p class="hero-sub">Computer Science student passionate about Artificial Intelligence, Deep Learning, and building intelligent systems that matter.</p>
+  <p class="hero-sub">Computer Science student passionate about Data Analytics, Artificial Intelligence, Deep Learning, and Building Intelligent Systems that matter.</p>
   <div class="hero-actions">
     <a href="#projects" class="btn btn-primary">View Projects</a>
-    <a href="https://raw.githubusercontent.com/Devaguru11/Devaguru-Nanduri-Resume/main/N%20Devaguru_Resume.docx.pdf" download="Devaguru_Nanduri_Resume.pdf" target="_blank" class="btn btn-ghost">Resume ↗</a>    <a href="https://github.com/Devaguru11" target="_blank" class="btn btn-ghost">GitHub ↗</a>
+    <a href="https://raw.githubusercontent.com/Devaguru11/Devaguru-Nanduri-Resume/main/N%20Devaguru_Resume.docx.pdf" download="Devaguru_Nanduri_Resume.pdf" target="_blank" class="btn btn-ghost">Resume ↗</a>
+    <a href="https://github.com/Devaguru11" target="_blank" class="btn btn-ghost">GitHub ↗</a>
     <a href="https://www.linkedin.com/in/devaguru-nanduri-874058294/" target="_blank" class="btn btn-ghost">LinkedIn ↗</a>
-    <a href="https://leetcode.com/u/GfB2ag9gs4/" target="_blank" class="btn btn-ghost">LeetCode ↗</a>  </div>
+    <a href="https://leetcode.com/u/GfB2ag9gs4/" target="_blank" class="btn btn-ghost">LeetCode ↗</a>
+  </div>
   <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
 </section>
 
@@ -286,13 +289,13 @@
   <div class="about-grid">
     <div>
       <div class="about-text">
-        <p>I'm a <strong>Computer Science Engineering student at Woxsen University (Class of 2027)</strong> with a CGPA of 8.98, deeply focused on building intelligent systems at the intersection of AI, research, and real-world application.</p>
+        <p>I'm a <strong>Computer Science Engineering student at Woxsen University (Class of 2027)</strong> with a CGPA of 9.08, deeply focused on building intelligent systems at the intersection of AI, research, and real-world application.</p>
         <p>My work spans <strong>deep learning models, IoT-integrated systems, computer vision pipelines,</strong> and full-stack web platforms. I bring both research rigor and engineering execution to every project.</p>
         <p>Beyond academics, I serve as a <strong>Research Assistant at Woxsen Agentic Lab</strong>, exploring LLM applications, autonomous AI agents, and next-gen agentic architectures.</p>
       </div>
       <div class="about-stats">
-        <div class="stat-item"><div class="stat-number">8.98</div><div class="stat-label">CGPA</div></div>
-        <div class="stat-item"><div class="stat-number">6+</div><div class="stat-label">Projects</div></div>
+        <div class="stat-item"><div class="stat-number">9.08</div><div class="stat-label">CGPA</div></div>
+        <div class="stat-item"><div class="stat-number">10+</div><div class="stat-label">Projects</div></div>
         <div class="stat-item"><div class="stat-number">3</div><div class="stat-label">Internships</div></div>
         <div class="stat-item"><div class="stat-number">2027</div><div class="stat-label">Graduating</div></div>
       </div>
@@ -334,66 +337,67 @@
 
 <!-- PROJECTS -->
 <section id="projects">
-    <div class="section-label">003 — Work</div>
-    <h2 class="section-title">FEATURED PROJECTS</h2>
-    <div class="projects-grid">
-  
-      <div class="project-card reveal" onclick="window.open('https://github.com/Devaguru11/lineman-smart-safety-system','_blank')">
-        <div class="project-number">01</div>
-        <div class="project-header"><span class="project-type">IoT · Safety</span></div>
-        <h3 class="project-title">Lineman Smart Safety System</h3>
-        <p class="project-desc">IoT-based wearable safety monitoring system for electric linemen. Uses Arduino sensors to detect real-time hazards and streams data to a React dashboard for instant alerts and monitoring.</p>
-        <div class="project-stack"><span class="stack-tag">Arduino</span><span class="stack-tag">React</span><span class="stack-tag">IoT</span><span class="stack-tag">Real-time</span></div>
-        <span class="project-link">↗</span>
-      </div>
-  
-      <div class="project-card reveal reveal-delay-1" onclick="window.open('https://github.com/Devaguru11/crnn-handwriting-ocr','_blank')">
-        <div class="project-number">02</div>
-        <div class="project-header"><span class="project-type">Deep Learning · OCR</span></div>
-        <h3 class="project-title">CRNN Handwriting Recognition</h3>
-        <p class="project-desc">Deep learning system combining CNN, BiLSTM, and CTC loss for recognizing handwritten text. Features a real-time interactive dashboard for inference and accuracy visualization.</p>
-        <div class="project-stack"><span class="stack-tag">CNN</span><span class="stack-tag">BiLSTM</span><span class="stack-tag">CTC</span><span class="stack-tag">Keras</span></div>
-        <span class="project-link">↗</span>
-      </div>
-  
-      <div class="project-card reveal reveal-delay-2" onclick="window.open('https://github.com/Devaguru11/Pose-Estimation-System-for-Fitness','_blank')">
-        <div class="project-number">03</div>
-        <div class="project-header"><span class="project-type">Computer Vision</span></div>
-        <h3 class="project-title">Pose Estimation for Fitness</h3>
-        <p class="project-desc">Computer vision pipeline using MediaPipe and OpenCV to track human body keypoints in real-time, enabling posture analysis and fitness movement monitoring applications.</p>
-        <div class="project-stack"><span class="stack-tag">MediaPipe</span><span class="stack-tag">OpenCV</span><span class="stack-tag">Python</span><span class="stack-tag">Real-time</span></div>
-        <span class="project-link">↗</span>
-      </div>
-  
-      <div class="project-card reveal reveal-delay-3" onclick="window.open('https://github.com/Devaguru11/IntelliQuiz','_blank')">
-        <div class="project-number">04</div>
-        <div class="project-header"><span class="project-type">AI · Education</span></div>
-        <h3 class="project-title">IntelliQuiz</h3>
-        <p class="project-desc">AI-powered quiz generation platform that intelligently creates, scores, and adapts questions based on user performance, enabling personalized and dynamic learning experiences.</p>
-        <div class="project-stack"><span class="stack-tag">Python</span><span class="stack-tag">AI</span><span class="stack-tag">NLP</span></div>
-        <span class="project-link">↗</span>
-      </div>
-  
-      <div class="project-card reveal" onclick="window.open('https://github.com/Devaguru11/Traffic-Signal-Simulation-using-Python','_blank')">
-        <div class="project-number">05</div>
-        <div class="project-header"><span class="project-type">Simulation · Algorithms</span></div>
-        <h3 class="project-title">Traffic Signal Simulation</h3>
-        <p class="project-desc">Python-based traffic signal simulation modelling real-world intersection behaviour, adaptive signal timing, and vehicle flow analysis using simulation algorithms.</p>
-        <div class="project-stack"><span class="stack-tag">Python</span><span class="stack-tag">Simulation</span><span class="stack-tag">Algorithms</span></div>
-        <span class="project-link">↗</span>
-      </div>
-  
-      <div class="project-card reveal reveal-delay-1" onclick="window.open('https://github.com/Devaguru11/MediChat','_blank')">
-        <div class="project-number">06</div>
-        <div class="project-header"><span class="project-type">Healthcare · AI</span></div>
-        <h3 class="project-title">MediChat</h3>
-        <p class="project-desc">AI-powered medical chatbot providing reliable health guidance. Built to bridge the gap between patients and healthcare information through conversational AI.</p>
-        <div class="project-stack"><span class="stack-tag">HTML/CSS/JS</span><span class="stack-tag">AI</span><span class="stack-tag">Healthcare</span></div>
-        <span class="project-link">↗</span>
-      </div>
-  
+  <div class="section-label">003 — Work</div>
+  <h2 class="section-title">FEATURED PROJECTS</h2>
+  <div class="projects-grid">
+
+    <div class="project-card reveal" onclick="window.open('https://github.com/Devaguru11/lineman-smart-safety-system','_blank')">
+      <div class="project-number">01</div>
+      <div class="project-header"><span class="project-type">IoT · Safety</span></div>
+      <h3 class="project-title">Lineman Smart Safety System</h3>
+      <p class="project-desc">IoT-based wearable safety monitoring system for electric linemen. Uses Arduino sensors (DHT11, gas, tilt, ultrasonic) with a Node.js backend and React dashboard for real-time hazard monitoring and alerts.</p>
+      <div class="project-stack"><span class="stack-tag">Arduino</span><span class="stack-tag">React</span><span class="stack-tag">Node.js</span><span class="stack-tag">IoT</span></div>
+      <span class="project-link">↗</span>
     </div>
-  </section>
+
+    <div class="project-card reveal reveal-delay-1" onclick="window.open('https://github.com/Devaguru11/crnn-handwriting-ocr','_blank')">
+      <div class="project-number">02</div>
+      <div class="project-header"><span class="project-type">Deep Learning · OCR</span></div>
+      <h3 class="project-title">CRNN Handwriting Recognition</h3>
+      <p class="project-desc">Deep learning system combining CNN, BiLSTM, and CTC loss for recognizing handwritten text. Features a real-time interactive dashboard for inference and confidence analysis.</p>
+      <div class="project-stack"><span class="stack-tag">CNN</span><span class="stack-tag">BiLSTM</span><span class="stack-tag">CTC</span><span class="stack-tag">Keras</span></div>
+      <span class="project-link">↗</span>
+    </div>
+
+    <div class="project-card reveal reveal-delay-2" onclick="window.open('https://github.com/Devaguru11/Pose-Estimation-System-for-Fitness','_blank')">
+      <div class="project-number">03</div>
+      <div class="project-header"><span class="project-type">Computer Vision</span></div>
+      <h3 class="project-title">Pose Estimation for Fitness</h3>
+      <p class="project-desc">Computer vision pipeline using MediaPipe and OpenCV to track human body keypoints in real-time, enabling posture analysis and fitness movement monitoring applications.</p>
+      <div class="project-stack"><span class="stack-tag">MediaPipe</span><span class="stack-tag">OpenCV</span><span class="stack-tag">Python</span><span class="stack-tag">Real-time</span></div>
+      <span class="project-link">↗</span>
+    </div>
+
+    <div class="project-card reveal reveal-delay-3" onclick="window.open('https://github.com/Devaguru11/IntelliQuiz','_blank')">
+      <div class="project-number">04</div>
+      <div class="project-header"><span class="project-type">AI · Education</span></div>
+      <h3 class="project-title">IntelliQuiz</h3>
+      <p class="project-desc">AI-powered quiz generation platform that intelligently creates, scores, and adapts questions based on user performance — finalist project at Upskill India Challenge, Techfest IIT Bombay.</p>
+      <div class="project-stack"><span class="stack-tag">Python</span><span class="stack-tag">AI</span><span class="stack-tag">NLP</span></div>
+      <span class="project-link">↗</span>
+    </div>
+
+    <div class="project-card reveal" onclick="window.open('https://github.com/Devaguru11/Traffic-Signal-Simulation-using-Python','_blank')">
+      <div class="project-number">05</div>
+      <div class="project-header"><span class="project-type">Simulation · Algorithms</span></div>
+      <h3 class="project-title">Traffic Signal Simulation</h3>
+      <p class="project-desc">Python-based traffic signal simulation modelling real-world intersection behaviour, adaptive signal timing, and vehicle flow analysis using simulation algorithms.</p>
+      <div class="project-stack"><span class="stack-tag">Python</span><span class="stack-tag">Simulation</span><span class="stack-tag">Algorithms</span></div>
+      <span class="project-link">↗</span>
+    </div>
+
+    <!-- NEW: Robosort from resume -->
+    <div class="project-card reveal reveal-delay-2" onclick="window.open('https://github.com/Devaguru11','_blank')">
+      <div class="project-number">06</div>
+      <div class="project-header"><span class="project-type">Robotics · Automation</span></div>
+      <h3 class="project-title">Robosort — E-Waste Management</h3>
+      <p class="project-desc">Robotic arm system for automated e-waste segregation using sensor-based classification to improve sorting efficiency. Presented at INNOFIESTA, HITAM College.</p>
+      <div class="project-stack"><span class="stack-tag">Robotics</span><span class="stack-tag">Arduino</span><span class="stack-tag">Sensors</span><span class="stack-tag">Automation</span></div>
+      <span class="project-link">↗</span>
+    </div>
+
+  </div>
+</section>
 
 <!-- EXPERIENCE -->
 <section id="experience">
@@ -402,24 +406,33 @@
   <div class="timeline">
     <div class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-period">Current · Research</div>
+      <div class="timeline-period">Dec 2025 – Mar 2026 · Research</div>
       <div class="timeline-role">Research Assistant</div>
       <div class="timeline-company">Woxsen Agentic Lab — Woxsen University</div>
       <p class="timeline-desc">Working on cutting-edge research in Agentic AI systems, large language model applications, and autonomous AI agent architectures. Contributing to experimental frameworks for multi-step reasoning.</p>
     </div>
     <div class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-period">Internship · Healthcare Tech</div>
+      <div class="timeline-period">Dec 2025 – Mar 2026 · Healthcare Tech</div>
       <div class="timeline-role">Technology Intern</div>
       <div class="timeline-company">nBall.ai Technologies</div>
-      <p class="timeline-desc">Built healthcare data scraping pipelines, implemented authentication systems, and developed machine learning pipelines for medical prediction models. Hands-on experience in production ML deployment.</p>
+      <p class="timeline-desc">Built healthcare data scraping pipelines, implemented ML pipelines for disease prediction, and developed secure authentication systems. Hands-on experience in production ML deployment.</p>
     </div>
     <div class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-period">Internship · Web Development</div>
+      <div class="timeline-period">Jun 2025 – Jul 2025 · Web Development</div>
       <div class="timeline-role">Web Developer Intern</div>
-      <div class="timeline-company">CollegeTips.in</div>
+      <div class="timeline-company">CollegeTips.in — Remote</div>
       <p class="timeline-desc">Developed responsive web interfaces and interactive UI components using HTML, CSS, and JavaScript for a student-facing platform with high traffic.</p>
+    </div>
+    <!-- NEW: Amazon Mentorship -->
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">Mentorship · Amazon</div>
+      <div class="timeline-role">Software Development & Business Intelligence</div>
+      <div class="timeline-company">Amazon — SDE & BI Mentorship Program</div>
+      <p class="timeline-desc">Mentored by Amazon SDE and BI engineers; gained hands-on experience in database design, SQL optimization, data modeling, backend architecture, and data analytics workflows.</p>
+      <div class="mentorship-badge">↳ Amazon Mentee</div>
     </div>
   </div>
 </section>
@@ -433,19 +446,19 @@
       <div class="achievement-rank">01</div>
       <div class="achievement-title">Upskill India Challenge</div>
       <div class="achievement-where">Techfest · IIT Bombay · Finalist</div>
-      <p class="achievement-desc">Reached the finals of one of India's most prestigious tech competitions, organized by IIT Bombay's annual technical festival.</p>
+      <p class="achievement-desc">Finalist in national-level hackathon; developed IntelliQuiz, an AI-based dynamic quiz generation system.</p>
     </div>
     <div class="achievement-card reveal reveal-delay-1">
       <div class="achievement-rank">02</div>
       <div class="achievement-title">Udhgam 2.0 Hackathon</div>
       <div class="achievement-where">Woxsen University · AgentX & Dataverse</div>
-      <p class="achievement-desc">Built solutions for AI and data-driven challenge tracks — AgentX and Dataverse — exploring real-world problem solving under time constraints.</p>
+      <p class="achievement-desc">Built AI-driven and data analytics solutions for decision-making and automation across two challenge tracks.</p>
     </div>
     <div class="achievement-card reveal reveal-delay-2">
       <div class="achievement-rank">03</div>
       <div class="achievement-title">INNOFIESTA Presentation</div>
-      <div class="achievement-where">HITAM College · Robosort</div>
-      <p class="achievement-desc">Presented the Robosort robotic e-waste management system to an audience of engineers, researchers, and industry professionals.</p>
+      <div class="achievement-where">HITAM College · Robosort · Finalist</div>
+      <p class="achievement-desc">Finalist presenting Robosort — a robotic e-waste management system — to engineers, researchers, and industry professionals.</p>
     </div>
   </div>
 </section>
@@ -457,17 +470,17 @@
   <div class="certs-list">
     <a href="https://coursera.org/share/1dda95ab16505105c31d34175df238ff" target="_blank" class="cert-item reveal">
       <div class="cert-num">01</div>
-      <div><div class="cert-name">Introduction to Web Development</div><div class="cert-issuer">University of California, Davis · Coursera</div></div>
+      <div><div class="cert-name">Introduction to Web Development</div><div class="cert-issuer">University of California, Davis · Coursera · Mar 2025</div></div>
       <div class="cert-verify">Verify ↗</div>
     </a>
     <a href="https://coursera.org/share/766b8b4638781d488c8b52e499ee01a9" target="_blank" class="cert-item reveal reveal-delay-1">
       <div class="cert-num">02</div>
-      <div><div class="cert-name">Database Structures & Management with MySQL</div><div class="cert-issuer">Meta · Coursera</div></div>
+      <div><div class="cert-name">Database Structures & Management with MySQL</div><div class="cert-issuer">Meta · Coursera · Nov 2025</div></div>
       <div class="cert-verify">Verify ↗</div>
     </a>
     <a href="https://coursera.org/share/0dfd82f349d6840ae7c5a987964b7e9f" target="_blank" class="cert-item reveal reveal-delay-2">
       <div class="cert-num">03</div>
-      <div><div class="cert-name">Programming for Everybody (Python)</div><div class="cert-issuer">University of Michigan · Coursera</div></div>
+      <div><div class="cert-name">Programming for Everybody (Python)</div><div class="cert-issuer">University of Michigan · Coursera · Nov 2023</div></div>
       <div class="cert-verify">Verify ↗</div>
     </a>
     <a href="https://coursera.org/share/5b8a0fb0c0e9abd308b5336379ff40bd" target="_blank" class="cert-item reveal reveal-delay-3">
@@ -487,8 +500,8 @@
       <div class="extra-marker">01</div>
       <div>
         <div class="extra-title">Carnatic Music — Morsing</div>
-        <div class="extra-sub">9+ Years</div>
-        <p class="extra-desc">Practicing the traditional Carnatic percussion mouth instrument — discipline that translates directly into focus and creative problem-solving.</p>
+        <div class="extra-sub">10+ Years</div>
+        <p class="extra-desc">Practicing the traditional South Indian percussion mouth instrument with training in Carnatic music rhythm and classical performance techniques.</p>
       </div>
     </div>
     <div class="extra-card reveal reveal-delay-1">
@@ -496,23 +509,23 @@
       <div>
         <div class="extra-title">Creative Head</div>
         <div class="extra-sub">Synapse Society</div>
-        <p class="extra-desc">Leading creative initiatives and events for one of the university's premier technical societies, bridging art and engineering.</p>
+        <p class="extra-desc">Leading creative initiatives and supporting event branding and visual content for the society.</p>
       </div>
     </div>
     <div class="extra-card reveal reveal-delay-2">
       <div class="extra-marker">03</div>
       <div>
         <div class="extra-title">Senior Executive (Digital)</div>
-        <div class="extra-sub">Spectrum Sciences Club</div>
-        <p class="extra-desc">Managing digital presence, content strategy, and technical events for the Spectrum Sciences Club at Woxsen University.</p>
+        <div class="extra-sub">Spectrum: The Sciences Club</div>
+        <p class="extra-desc">Designing posters and producing digital content to enhance the club's online presence at Woxsen University.</p>
       </div>
     </div>
     <div class="extra-card reveal reveal-delay-3">
       <div class="extra-marker">04</div>
       <div>
         <div class="extra-title">Class Representative</div>
-        <div class="extra-sub">Woxsen University</div>
-        <p class="extra-desc">Official liaison between students and faculty, organizing academic events and advocating for student needs at the department level.</p>
+        <div class="extra-sub">Woxsen University · 2 Years</div>
+        <p class="extra-desc">Official liaison between students and faculty, coordinating communication and managing academic updates for two consecutive years.</p>
       </div>
     </div>
   </div>
@@ -520,146 +533,123 @@
 
 <!-- CONTACT -->
 <section id="contact">
-    <div class="contact-inner">
-      <div class="contact-left reveal">
-        <div class="section-label">008 — Get in Touch</div>
-        <h2>LET'S<br>BUILD <span>TOGETHER</span></h2>
-        <p>Open to internships, research collaborations, and interesting projects. Let's connect.</p>
-        <div class="contact-links">
-          <a href="mailto:nvdevagurus@gmail.com" class="contact-link">
-            <div><span class="contact-link-label">Email</span><span class="contact-link-val">nvdevagurus@gmail.com</span></div>
-          </a>
-          <a href="https://www.linkedin.com/in/devaguru-nanduri-874058294/" target="_blank" class="contact-link">
-            <div><span class="contact-link-label">LinkedIn</span><span class="contact-link-val">devaguru-nanduri-874058294</span></div>
-          </a>
-          <a href="https://github.com/Devaguru11" target="_blank" class="contact-link">
-            <div><span class="contact-link-label">GitHub</span><span class="contact-link-val">github.com/Devaguru11</span></div>
-          </a>
-          <a href="tel:+91 7032674191" class="contact-link">
-            <div><span class="contact-link-label">Phone</span><span class="contact-link-val">+91 7032674191</span></div>
-          </a>
-        </div>
-      </div>
-      <div class="contact-form reveal reveal-delay-2">
-        <div class="form-row"> 
-          <div class="form-group"><label>Name</label><input type="text" id="c-name" placeholder="Your name"></div>
-          <div class="form-group"><label>Email</label><input type="email" id="c-email" placeholder="your@email.com"></div>
-        </div>
-        <div class="form-group"><label>Subject</label><input type="text" id="c-subject" placeholder="Internship · Collaboration · Research"></div>
-        <div class="form-group"><label>Message</label><textarea id="c-message" placeholder="Tell me about what you're working on..."></textarea></div>
-        <button id="send-btn" class="btn btn-primary" style="width:100%;padding:1rem;font-size:.8rem;" onclick="sendMessage()">Send Message →</button>
+  <div class="contact-inner">
+    <div class="contact-left reveal">
+      <div class="section-label">008 — Get in Touch</div>
+      <h2>LET'S<br>BUILD <span>TOGETHER</span></h2>
+      <p>Open to internships, research collaborations, and interesting projects. Let's connect.</p>
+      <div class="contact-links">
+        <a href="mailto:nvdevagurus@gmail.com" class="contact-link">
+          <div><span class="contact-link-label">Email</span><span class="contact-link-val">nvdevagurus@gmail.com</span></div>
+        </a>
+        <a href="https://www.linkedin.com/in/devaguru-nanduri-874058294/" target="_blank" class="contact-link">
+          <div><span class="contact-link-label">LinkedIn</span><span class="contact-link-val">devaguru-nanduri-874058294</span></div>
+        </a>
+        <a href="https://github.com/Devaguru11" target="_blank" class="contact-link">
+          <div><span class="contact-link-label">GitHub</span><span class="contact-link-val">github.com/Devaguru11</span></div>
+        </a>
+        <a href="tel:+917032674191" class="contact-link">
+          <div><span class="contact-link-label">Phone</span><span class="contact-link-val">+91 7032674191</span></div>
+        </a>
       </div>
     </div>
-  </section>
-  
-  <script>
-  function sendMessage() {
-    const name    = document.getElementById('c-name').value.trim();
-    const email   = document.getElementById('c-email').value.trim();
-    const subject = document.getElementById('c-subject').value.trim();
-    const message = document.getElementById('c-message').value.trim();
-    const btn     = document.getElementById('send-btn');
-  
-    if (!name || !email || !subject || !message) {
-      alert('Please fill in all fields.');
-      return;
-    }
-  
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-  
-    fetch('https://formspree.io/f/xreygvbz', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, subject, message })
-    })
-    .then(res => {
-      if (res.ok) {
-        btn.textContent = 'Message Sent!';
-        btn.style.background = '#fff';
-        document.getElementById('c-name').value = '';
-        document.getElementById('c-email').value = '';
-        document.getElementById('c-subject').value = '';
-        document.getElementById('c-message').value = '';
-      } else {
-        btn.textContent = 'Failed. Try again.';
-        btn.style.background = 'var(--accent3)';
-        btn.disabled = false;
-      }
-    })
-    .catch(() => {
-      btn.textContent = 'Failed. Try again.';
-      btn.style.background = 'var(--accent3)';
-      btn.disabled = false;
-    });
-  }
-  </script>
+    <div class="contact-form reveal reveal-delay-2">
+      <div class="form-row">
+        <div class="form-group"><label>Name</label><input type="text" id="c-name" placeholder="Your name"></div>
+        <div class="form-group"><label>Email</label><input type="email" id="c-email" placeholder="your@email.com"></div>
+      </div>
+      <div class="form-group"><label>Subject</label><input type="text" id="c-subject" placeholder="Internship · Collaboration · Research"></div>
+      <div class="form-group"><label>Message</label><textarea id="c-message" placeholder="Tell me about what you're working on..."></textarea></div>
+      <button id="send-btn" class="btn btn-primary" style="width:100%;padding:1rem;font-size:.8rem;" onclick="sendMessage()">Send Message →</button>
+    </div>
+  </div>
+</section>
 
-
-<!-- FOOTER -->
 <footer>
   <p>© 2025 DEVAGURU NANDURI</p>
   <p>WOXSEN UNIVERSITY · CLASS OF 2027</p>
 </footer>
 
+<!-- ── CHATBOT ── -->
+<button id="chat-fab" aria-label="Chat with Devaguru">
+  <!-- open icon -->
+  <svg class="fab-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  <!-- close icon -->
+  <svg class="fab-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+</button>
+
+<div id="chat-box">
+  <div class="chat-header">
+    <div class="chat-avatar">DN</div>
+    <div class="chat-header-info">
+      <div class="chat-header-name">Devaguru Nanduri</div>
+      <div class="chat-header-status">● Quick Guide</div>
+    </div>
+  </div>
+  <div class="chat-messages" id="chat-messages">
+    <div class="msg msg-bot">Hello! I'm Devaguru's interactive guide. Choose a topic below to learn about my journey:</div>
+  </div>
+  <div class="chat-suggestions" id="chat-suggestions">
+    <!-- Dynamically loaded by chatbot.js -->
+  </div>
+</div>
+
 <script>
-  // CURSOR
-  const cursor = document.getElementById('cursor');
-  const ring = document.getElementById('cursorRing');
-  if (window.matchMedia('(pointer: fine)').matches && cursor && ring) {
-    let mx=0,my=0,rx=0,ry=0;
-    document.addEventListener('mousemove',e=>{
-      mx=e.clientX;my=e.clientY;
-      cursor.style.left=mx-5+'px';cursor.style.top=my-5+'px';
-    });
-    (function animateCursor(){
-      rx+=(mx-rx)*.12;ry+=(my-ry)*.12;
-      ring.style.left=rx-20+'px';ring.style.top=ry-20+'px';
-      requestAnimationFrame(animateCursor);
-    })();
-    document.querySelectorAll('a,button').forEach(el=>{
-      el.addEventListener('mouseenter',()=>{cursor.style.transform='scale(2)';ring.style.transform='scale(1.5)';ring.style.opacity='.2'});
-      el.addEventListener('mouseleave',()=>{cursor.style.transform='scale(1)';ring.style.transform='scale(1)';ring.style.opacity='.5'});
-    });
-  }
+// ── CONTACT FORM ──
+function sendMessage() {
+  const name    = document.getElementById('c-name').value.trim();
+  const email   = document.getElementById('c-email').value.trim();
+  const subject = document.getElementById('c-subject').value.trim();
+  const message = document.getElementById('c-message').value.trim();
+  const btn     = document.getElementById('send-btn');
+  if (!name || !email || !subject || !message) { alert('Please fill in all fields.'); return; }
+  btn.textContent = 'Sending...'; btn.disabled = true;
+  fetch('https://formspree.io/f/xreygvbz', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, email, subject, message })
+  }).then(res => {
+    if (res.ok) {
+      btn.textContent = 'Message Sent!'; btn.style.background = '#fff';
+      ['c-name','c-email','c-subject','c-message'].forEach(id => document.getElementById(id).value = '');
+    } else { btn.textContent = 'Failed. Try again.'; btn.style.background = 'var(--accent3)'; btn.disabled = false; }
+  }).catch(() => { btn.textContent = 'Failed. Try again.'; btn.style.background = 'var(--accent3)'; btn.disabled = false; });
+}
 
-  // PROJECT GLOW
-  document.querySelectorAll('.project-card').forEach(card=>{
-    card.addEventListener('mousemove',e=>{
-      const r=card.getBoundingClientRect();
-      card.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
-      card.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
-    });
+// ── CURSOR ──
+const cursor = document.getElementById('cursor');
+const ring   = document.getElementById('cursorRing');
+if (window.matchMedia('(pointer: fine)').matches && cursor && ring) {
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; cursor.style.left=mx-5+'px'; cursor.style.top=my-5+'px'; });
+  (function animateCursor(){ rx+=(mx-rx)*.12; ry+=(my-ry)*.12; ring.style.left=rx-20+'px'; ring.style.top=ry-20+'px'; requestAnimationFrame(animateCursor); })();
+  document.querySelectorAll('a,button').forEach(el => {
+    el.addEventListener('mouseenter', () => { cursor.style.transform='scale(2)'; ring.style.transform='scale(1.5)'; ring.style.opacity='.2'; });
+    el.addEventListener('mouseleave', () => { cursor.style.transform='scale(1)'; ring.style.transform='scale(1)'; ring.style.opacity='.5'; });
   });
+}
 
-  // SCROLL REVEAL
-  const observer=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
-  },{threshold:.08});
-  document.querySelectorAll('.reveal,.timeline-item').forEach(el=>observer.observe(el));
+// ── SCROLL REVEAL ──
+const observer = new IntersectionObserver(entries => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold:.08 });
+document.querySelectorAll('.reveal,.timeline-item').forEach(el => observer.observe(el));
 
-  // ACTIVE NAV
-  const sections=document.querySelectorAll('section[id]');
-  const navLinks=document.querySelectorAll('.nav-links a');
-  window.addEventListener('scroll',()=>{
-    let current='';
-    sections.forEach(s=>{if(scrollY>=s.offsetTop-200)current=s.id});
-    navLinks.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+current?'var(--accent)':''});
-  });
+// ── ACTIVE NAV ──
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if(scrollY >= s.offsetTop - 200) current = s.id; });
+  navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#'+current ? 'var(--accent)' : ''; });
+});
 
-  // HAMBURGER
-  const hamburger=document.getElementById('hamburger');
-  const mobileMenu=document.getElementById('mobileMenu');
-  hamburger.addEventListener('click',()=>{
-    hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-  });
-  document.querySelectorAll('.mob-link').forEach(link=>{
-    link.addEventListener('click',()=>{
-      hamburger.classList.remove('open');
-      mobileMenu.classList.remove('open');
-    });
-  });
+// ── HAMBURGER ──
+const hamburger  = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); });
+
+document.querySelectorAll('.mob-link').forEach(link => { link.addEventListener('click', () => { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); }); });
 </script>
+
+<script src="chatbot.js"></script>
 </body>
 </html>
